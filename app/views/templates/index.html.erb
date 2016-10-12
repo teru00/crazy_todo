@@ -1,0 +1,41 @@
+<!-- app/views/templates/index.html.erb -->
+<div class="container " ng-controller="TodoListController">
+  <h1>Todo リスト</h1>
+  <div class="col-md-6">
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+      <span>{{list.name}}</span>
+    </div>
+
+    <form id="new_todo" ng-submit="addTodo(todoDescription)">
+      <div class="input-group">
+        <input type="text" id="todoDescription" class="form-control input-md" placeholder="Add a Todo..." autofocus="autofocus" maxlength="255" ng-model="todoDescription">
+        <button class="btn btn-info btn-md" type="submit">Add</button>
+      </div>
+    </form>
+  
+    <ul class="list-group">
+      <div class="random-button">
+        <button class="btn btn-default btn-xs center-block" type="button" ng-click="randTodo()">Crazy Todo!</button>
+      </div>
+      <li class="list-group-item" ng-repeat="todo in list.todos">
+        <div class="todo-completed">
+          <input type="checkbox">
+        </div>
+        <div class="todo-description">
+          <span>{{todo.description}}</span>
+        </div>
+        <div class="todo-buttons pull-right">
+          <div class="delete-button pull-right">
+            <button class="btn btn-danger btn-xs pull-right" type="button" ng-click="deleteTodo(todo)">DEL
+            </button>
+          </div>
+          <button class="btn btn-default btn-xs pull-right" type="button" ng-click="upTodo(todo)">UP
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
