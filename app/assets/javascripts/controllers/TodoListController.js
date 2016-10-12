@@ -4,7 +4,7 @@ angular.module('crazyTodoApp')
   
   //Todo追加
   $scope.addTodo = function(todoDescription) {
-    todo = { 'description' : todoDescription };
+    todo = { 'description' : todoDescription, 'completed' : false };
     $scope.list.todos.unshift(todo);
     $scope.todoDescription = '';
   };

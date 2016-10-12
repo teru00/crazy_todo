@@ -19,9 +19,9 @@
       <div class="random-button">
         <button class="btn btn-default btn-xs center-block" type="button" ng-click="randTodo()">Crazy Todo!</button>
       </div>
-      <li class="list-group-item" ng-repeat="todo in list.todos">
+      <li class="list-group-item" ng-repeat="todo in list.todos" ng-class="{completed: todo.completed}">
         <div class="todo-completed">
-          <input type="checkbox">
+          <input type="checkbox" ng-model="todo.completed">
         </div>
         <div class="todo-description">
           <span>{{todo.description}}</span>
