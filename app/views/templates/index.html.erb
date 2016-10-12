@@ -8,9 +8,11 @@
       <span>{{list.name}}</span>
     </div>
 
-    <form id="new_todo" ng-submit="addTodo(todoDescription)">
+    <form name="todoForm" id="new_todo" ng-submit="addTodo(todoDescription)">
       <div class="input-group">
-        <input type="text" id="todoDescription" class="form-control input-md" placeholder="Add a Todo..." autofocus="autofocus" maxlength="255" ng-model="todoDescription">
+        <input type="text" name="todoDescription" id="todoDescription" class="form-control input-md" placeholder="Add a Todo..." 
+        autofocus="autofocus" maxlength="255" ng-model="todoDescription" required />
+        <span ng-show="todoForm.todoDescription.$error.required"></span>
         <button class="btn btn-info btn-md" type="submit">Add</button>
       </div>
     </form>
