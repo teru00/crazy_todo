@@ -4,11 +4,13 @@ angular.module('crazyTodoApp')
   
   //Todo追加
   $scope.addTodo = function(todoDescription) {
-    todo = { 'description' : todoDescription, 'completed' : false };
-    $scope.list.todos.unshift(todo);
-    $scope.todoDescription = '';
+    if ($scope.todoDescription) {
+      todo = { 'description' : todoDescription, 'completed' : false };
+      $scope.list.todos.unshift(todo);
+      $scope.todoDescription = '';
+    }
   };
-  //Todo完了
+
   //Todo削除
   $scope.deleteTodo = function(todo) {
     $scope.list.todos.splice($scope.list.todos.indexOf(todo), 1);
